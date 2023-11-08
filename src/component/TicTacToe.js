@@ -91,22 +91,24 @@ const TicTacToe = () => {
   isGameOver();
 
   return (
-    <div>
-      <span className="win-history">
-        A: {winCount.A}
-        <br />
-        B: {winCount.B}
-      </span>
-      {gameFinished && (
-        <EndGame
-          winCount={winCount}
-          restartGame={restartGame}
-          player={player}
-          draw={draw}
-          clearHistory={clearHistory}
-        />
-      )}
-      <Square clickedArray={grid} handleClick={handleClick} />
+    <div className="container">
+      <div className="heading-text">Tic Tac Toe</div>
+      <div>
+        <div className="win-history-container">
+          <div className="win-history">A: {winCount.A}</div>
+          <div className="win-history">B: {winCount.B}</div>
+        </div>
+        {gameFinished && (
+          <EndGame
+            winCount={winCount}
+            restartGame={restartGame}
+            player={player}
+            draw={draw}
+            clearHistory={clearHistory}
+          />
+        )}
+        <Square clickedArray={grid} handleClick={handleClick} />
+      </div>
     </div>
   );
 };
